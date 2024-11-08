@@ -2,10 +2,11 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE = 'adhyuth18/demo1'
+        DOCKER_CREDENTIALS = 'docker-hub'
+        DOCKER_IMAGE = 'adhyuth18/endsem'
         DOCKER_TAG = 'LATEST'
-        DOCKER_USERNAME = 'adhyuth18/demo1'
-        DOCKER_PASSWORD = 'dckr_pat_rxQzX30nXfYhaY6V8Gqz4pR5Nwc'
+        DOCKER_USERNAME = 'adhyuth18'
+        DOCKER_PASSWORD = 'dckr_pat_JkgJCOSEWwdUpIbSkZfpBuBfIKs'
     }
     
     stages {
