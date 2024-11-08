@@ -7,6 +7,14 @@ pipeline {
     }
     
     stages {
+        stage('Login to Docker Hub'){
+            steps {
+                script {
+                    // Ensure you're logged in before pushing the image
+                    sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password -stdin'
+                }
+            }
+        }    
         stage('Checkout') {
             steps {
                 checkout scm
