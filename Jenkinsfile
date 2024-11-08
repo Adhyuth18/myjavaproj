@@ -2,9 +2,10 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
+        DOCKER_IMAGE = 'adhyuth18/demo1'
+        DOCKER_TAG = 'LATEST'
         DOCKER_USERNAME = 'adhyuth18/demo1'
-        DOCKER_PASSWORD = 'Adyar@5155'
+        DOCKER_PASSWORD = 'dckr_pat_rxQzX30nXfYhaY6V8Gqz4pR5Nwc'
     }
     
     stages {
@@ -45,7 +46,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('https://registry.hub.docker.com') {
                         docker.image("${DOCKER_USERNAME}/demo-app:${BUILD_NUMBER}").push()
                     }
                 }
