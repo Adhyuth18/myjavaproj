@@ -3,7 +3,8 @@ pipeline {
     
     environment {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-        DOCKER_USERNAME = 'snuwebdev/dolab'
+        DOCKER_USERNAME = 'adhyuth18/demo1'
+        DOCKER_PASSWORD = 'Adyar@5155'
     }
     
     stages {
